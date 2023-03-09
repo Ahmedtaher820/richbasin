@@ -1,0 +1,15 @@
+{
+    "English":"English",
+    "Arabic":"Arabic",
+    "leadership":"Leadership Team",
+    "hse":"Healthy, Safety & Environment(HSE)",
+    "nav":{
+        "about":"About",
+        "services":"Services",
+        "project":"Project",
+        "csr":"CSR",
+        "news":"News",
+        "career":"Career",
+        "contact":"Contact",
+    }
+}
