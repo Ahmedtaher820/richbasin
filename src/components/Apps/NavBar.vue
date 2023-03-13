@@ -66,7 +66,7 @@ const mobileMenuOpen = ref(false)
           <div class="flex lg:flex-1">
             <a href="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
-              <img class="w-20" src="../../public/logo.jfif" alt="" />
+              <img class="w-20" src="../../../public/logo.jfif" alt="" />
             </a>
           </div>
           <div class="flex lg:hidden">
@@ -116,14 +116,10 @@ const mobileMenuOpen = ref(false)
             <language-switcher />
           </div>
         </nav>
-        <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-          <div class="fixed inset-0 z-10" />
-          <DialogPanel class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-              </a>
+        <Dialog as="div" class="lg:hidden " @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+          <div class="fixed inset-0 " />
+          <DialogPanel class="fixed inset-y-0 mob-nav right-0 w-full overflow-y-auto bg-white px-8 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-end">
               <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
                 <span class="sr-only">Close menu</span>
                 <XMarkIcon class="h-6 w-6" aria-hidden="true" />
@@ -132,16 +128,16 @@ const mobileMenuOpen = ref(false)
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
-                  <Disclosure as="div" class="-mx-3" v-slot="{ open }">
+                  <Disclosure as="div"  v-slot="{ open }">
                     <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 text-base  hover:bg-gray-50">
                       {{ $t('nav.about') }}
                       <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
                     </DisclosureButton>
                     <DisclosurePanel class="mt-2 space-y-2">
-                      <DisclosureButton v-for="item in [...about, ...callsToAction]" :key="item.name" as="a" :href="item.href" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton>
+                      <DisclosureButton v-for="item in [...about, ...callsToAction]" :key="item.name" as="a" :href="item.href" class="block rounded-lg py-2 pl-8 pr-3 text-sm font-semibold leading-7 text-gray-600 hover:bg-gray-50">{{ item.name }}</DisclosureButton>
                     </DisclosurePanel>
                   </Disclosure>
-                  <router-link v-for="item in nav"  :key="item.name" :to="item.path" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900">{{$t(`nav.${item.name}`)}}</router-link>
+                  <router-link v-for="item in nav"  :key="item.name" :to="item.path" class=" block rounded-lg py-2 text-base font-semibold leading-7 text-gray-900">{{$t(`nav.${item.name}`)}}</router-link>
                 </div>
                 <div class="py-6">
                   <language-switcher />
@@ -166,5 +162,8 @@ nav li.router-link-exact-active {
 }
 .link:hover::after{
   @apply w-1/2
+}
+.mob-nav{
+  z-index: 999;
 }
 </style>

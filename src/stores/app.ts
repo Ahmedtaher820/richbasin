@@ -19,6 +19,7 @@ export const useApp = defineStore({
               direction: 'rtl',
             },
           ],
+          isAdmin:false
     }),
     getters:{
         getLocales : state => state.locales,

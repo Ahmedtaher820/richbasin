@@ -9,21 +9,21 @@
         data-aos-delay="150"
       
       >
-        <img src="../../public/project1.jpg" alt="">
+        <img src="../../../public/project1.jpg" alt="">
         <h2 class="text-3xl">Platform Installation & Drilling</h2>
       </router-link>
       <router-link to="/" class="flex flex-col items-center justify-center gap-3"  data-aos="flip-right" 
         data-aos-delay="250"
       
       >
-        <img src="../../public/project1.jpg" alt="">
+        <img src="../../../public/project1.jpg" alt="">
         <h2 class="text-3xl">Platform Installation & Drilling</h2>
       </router-link>
       <router-link to="/" class="flex flex-col items-center justify-center gap-3"  data-aos="flip-left" 
         data-aos-delay="150"
       
       >
-        <img src="../../public/project1.jpg" alt="">
+        <img src="../../../public/project1.jpg" alt="">
         <h2 class="text-3xl">Platform Installation & Drilling</h2>
       </router-link>
     </div>

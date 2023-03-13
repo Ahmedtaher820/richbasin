@@ -10,6 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseButton: typeof import('./components/Apps/BaseButton.vue')['default']
+    CompBg: typeof import('./components/Apps/CompBg.vue')['default']
     Footer: typeof import('./components/Apps/Footer.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     LanguageSwitcher: typeof import('./components/LanguageSwitcher.vue')['default']

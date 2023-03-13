@@ -4,7 +4,7 @@
         <div class="w-1/2 mb-14 cursor-pointer" 
           
           >
-            <img src="../../public/about2.jfif" alt="first">
+            <img src="../../../public/about2.jfif" alt="first">
             <div class="new-body grid grid-cols-5 py-8 pl-8 pr-8 bg-primary-200">
               <div class="col-span-2 flex flex-col pr-6 news-info relative border-r-2">
                 <span class="pb-5 relative" > <CalendarIcon class="h-4 w-4 text-gray-700" /> {{ obj.date.fullTime }} </span>

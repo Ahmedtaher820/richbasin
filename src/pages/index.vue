@@ -6,7 +6,7 @@
       <div>
 
         <video autoplay loop class="absolute top-0 z-0">
-          <source src="../public/sea-1.mp4" type="video/mp4" />
+          <source src="../../public/sea-1.mp4" type="video/mp4" />
           <!-- <source src="Browsing.webm" type="video/webm" /> -->
           <img src="Browsing.jpg" alt="">
         </video>
@@ -119,7 +119,7 @@ position: relative;
   }
 }
 .serv-bg{
-  background: url('../public/pertol1.jpeg');
+  background: url('../../public/pertol1.jpeg');
   background-position-y: 60%;
   background-size: cover;
 }
