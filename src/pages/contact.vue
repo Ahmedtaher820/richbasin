@@ -69,8 +69,9 @@ const mobileMenuOpen = ref(false);
 <template>
   <Teleport to="body" v-if="showEmailSvg">
     <a
-      href="/"
+      href="https://sso.godaddy.com/v1/login?realm=pass&app=ox&fbclid=IwAR1ymaIRTAxQ4q2EcKCE7bjTVnJv74_swFirYRYPVfGRUjApXsFXDIfsRE4"
       class="btn-up fixed bottom-10 bg-primary py-2 px-4 rounded-sm hover:bg-primary-100 duration-300 cursor-pointer transition-all"
+      target="_blank"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +202,7 @@ const mobileMenuOpen = ref(false);
                     />
                   </dt>
                   <dd>
-                    <a class="hover:text-white" href="mailto:hello@example.com"
+                    <a class="hover:text-white" href="mailto:info@richbasin.co"
                       >info@richbasin.co</a
                     >
                   </dd>
@@ -226,7 +227,7 @@ const mobileMenuOpen = ref(false);
                       name="first-name"
                       id="first-name"
                       autocomplete="given-name"
-                      class="block w-full rounded-md border-0 bg-white/5 py-2 px-3.5 text-sm leading-6 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2    "
+                      class="block w-full rounded-md border-0 bg-white/5 py-2 px-3.5 text-sm leading-6 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 "
                     />
                   </div>
                 </div>

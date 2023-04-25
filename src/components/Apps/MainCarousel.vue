@@ -22,7 +22,7 @@
           </div>
     </Slide>
   
-    </carousel>
+    </carousel> 
   </template>
   <script lang="ts" setup>
   // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
