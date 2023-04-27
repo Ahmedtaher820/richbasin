@@ -32,7 +32,7 @@ const movePageTop = ()=>{
 <template>
   <div>
     <nav-bar />
-    <router-view />
+      <router-view />
     <Footer />
     <Teleport to="body">
       <div class="btn-up fixed  bottom-10 bg-primary py-2 px-2 rounded-sm hover:bg-primary-100 duration-300 cursor-pointer transition-all" @click="movePageTop()" :class="[i18n.global.locale.value === 'ar' ? 'left-10' : 'right-10']" v-if="y >= 800">

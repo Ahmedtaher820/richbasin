@@ -8,8 +8,7 @@ import router from './router'
 import "./assets/style.css"
 import 'aos/dist/aos.css'
 import AOS from "aos";
-
-    AOS.init();
+AOS.init();
 const app = createApp(App)
 app.use(createPinia())
 app.use(i18n)

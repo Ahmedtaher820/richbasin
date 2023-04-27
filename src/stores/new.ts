@@ -38,6 +38,6 @@ export const news = defineStore({
         ]
     }),
     getters:{
-        getPageContent: state => (slug:String) => state.newsList.find((item)=> item.link === slug)
+        getPageContent: state => (slug:string) => state.newsList.find((item)=> item.link === slug)
     }
 })

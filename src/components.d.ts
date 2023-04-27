@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     MainCarousel: typeof import('./components/Apps/MainCarousel.vue')['default']
     NavBar: typeof import('./components/Apps/NavBar.vue')['default']
     OurProject: typeof import('./components/Home/OurProject.vue')['default']
+    Overlayloader: typeof import('./components/Apps/overlayloader.vue')['default']
     Partnerships: typeof import('./components/Home/Partnerships.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

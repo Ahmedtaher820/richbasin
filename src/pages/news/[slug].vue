@@ -5,8 +5,8 @@ const { getPageContent} = storeToRefs(news())
 </script>
 <template>
     <div>
-        <CompBg img="newsBg" :title="getPageContent($route.params.slug)?.title" />
-        <div class="mt-12 flex flex-col px-32 px-12 my-24 gap-4 items-center w-3/4 mx-auto">
+        <CompBg img="newsBg" :title="getPageContent($route.params?.slug)?.title" />
+        <div class="mt-12 flex flex-col md:px-32 px-12 my-24 gap-4 items-center w-3/4 mx-auto">
             <div class="page-img">
                 <img :src="`../../../public/${getPageContent($route.params.slug)?.imgSrc}.jpeg`" :alt="getPageContent($route.params.slug).imgSrc" class="w-full mx-auto">
             </div>

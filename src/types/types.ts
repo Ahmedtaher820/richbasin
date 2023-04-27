@@ -13,3 +13,10 @@ export interface Events{
         link:string
   
 } 
+export interface LeaderShipType {
+    image:string
+    name:string
+    content:string
+    _id:string
+    job:string
+}

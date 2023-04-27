@@ -24,7 +24,7 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/so
 import i18n from '../../i18n';
 
 const about = [
-  { name: 'leadership', href: '/about/leader-shipteam', icon: ChartPieIcon },
+  { name: 'leadership', href: '/leadership', icon: ChartPieIcon },
   { name: 'hse', href: '/about/health-safety-and-environment-hse', icon: CursorArrowRaysIcon },
 ]
 const callsToAction = [
@@ -93,10 +93,10 @@ const mobileMenuOpen = ref(false)
                         <component :is="item.icon" class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div class="flex-auto">
-                        <a :href="item.href" class="block font-semibold text-gray-900">
+                        <router-link :to="{path:item.href}" class="block font-semibold text-gray-900">
                           {{$t(`${item.name}`) }}
                           <span class="absolute inset-0" />
-                        </a>
+                        </router-link>
                       </div>
                     </div>
                   </div>
