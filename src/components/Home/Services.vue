@@ -4,7 +4,13 @@ import {  PropType } from 'vue';
 
 const props = defineProps({
   services:{
-      type:[] as PropType<PublicFormData[]>,
+      type:[] as PropType<{
+            content: string[]
+            header: string 
+            image: string
+            date:string 
+            _id:string 
+        }[]>,
       required: true
   },
 })

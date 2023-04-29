@@ -81,7 +81,6 @@ onMounted(async () => {
           <video autoplay loop class="absolute top-0 z-0">
             <source src="../../public/sea-1.mp4" type="video/mp4" />
             <!-- <source src="Browsing.webm" type="video/webm" /> -->
-            <img src="Browsing.jpg" alt="" />
           </video>
         </div>
         <div class="z-20 relative header-text">

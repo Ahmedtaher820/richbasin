@@ -1,5 +1,4 @@
 import Home from "../pages/index.vue"
-import services from "../pages/services.vue"
 
 const mainRoutes =  [
     {

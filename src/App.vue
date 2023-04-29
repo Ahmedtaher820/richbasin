@@ -8,7 +8,6 @@ import { useWindowScroll } from '@vueuse/core'
 
 const { locale } = useI18n()
 
-const {name} = storeToRefs(useApp())
 
 const { x, y } = useWindowScroll()
 

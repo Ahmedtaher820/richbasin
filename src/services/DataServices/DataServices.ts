@@ -12,27 +12,13 @@ import {
 const instance = axios.create({
     baseURL:'https://teal-cloudy-trout.cyclic.app/api'
 })
-instance.interceptors.response.use((response)=>{
-    if (response.status === UNAUTHORIZED_CODE) {
-        router.push({path:'/login'})
-        return
-      }
+instance.interceptors.response.use((response:any)=>{
+    
       return response
     },
     (error) => {
-        if (error.response.status === UNAUTHORIZED_CODE || error.response.status === PAGE_EXPIRED) {
-          localStorage.clear()
-          router.push({ name: 'login'})
-          return
-        }
-        else if (error.response.status === NOT_FOUND_CODE) {
-            router.push({ path: '/'})
-          
-        }
-        else if (error.response.status === SUBSCRIPTION_ENDS) {
-          window.location.href = import.meta.env.VITE_PAYMENT_URL
-        }
-        else if (error.response.status === ERR_403) {
+        
+        if (error.response.status === ERR_403) {
           //console.log('yes')
           window.location.href = '/welcome'
         }

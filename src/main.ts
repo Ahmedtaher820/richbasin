@@ -7,6 +7,8 @@ import 'aos/dist/aos.css'
 import router from './router'
 import "./assets/style.css"
 import 'aos/dist/aos.css'
+// @ts-ignore
+
 import AOS from "aos";
 AOS.init();
 const app = createApp(App)

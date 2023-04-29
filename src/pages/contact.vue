@@ -30,7 +30,7 @@ const showEmailSvg = ref(false);
 const { isAdmin } = storeToRefs(useApp());
 
 onMounted(() => {
-    const isAdminStorage = JSON.parse( localStorage.getItem('isAdmin'))
+    const isAdminStorage = JSON.parse( localStorage.getItem('isAdmin') || '')
     if(!isAdminStorage && isAdminStorage !== null){
         return
     }

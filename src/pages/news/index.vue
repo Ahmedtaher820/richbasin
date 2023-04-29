@@ -31,7 +31,7 @@ const dateFormat = (date:string)=>{
             <div class="flex flex-col" v-for="(item,index) in news" :key="index"
                 :data-aos="(index + 1) % 2 !== 0 ? 'fade-right' : 'fade-left'">
                 <div class="new-img">
-                    <img :src="item.image" class="h-60 w-full" :alt="item.imgSrc">
+                    <img :src="item.image" class="h-60 w-full" :alt="item.image">
                 </div>
                 <div class="pe-4">
                     <h2 class="text-2xl mt-y font-semibold text-primary">{{ item.header }}</h2>
