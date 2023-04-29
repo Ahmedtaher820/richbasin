@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia"
-import {leadership} from "../../stores/leadership"
-const {leadershipInfo} = storeToRefs(leadership())
+import {getAllData} from "../../stores/getAllData"
+const {leadershipInfo} = storeToRefs(getAllData())
 const processing = ref(false)
 onMounted(()=>{
     if(leadershipInfo.value.length === 0){
         processing.value= true
-        leadership().getAllLeaderShip().finally(()=>{
+        getAllData().getAllLeaderShip().finally(()=>{
         processing.value= false
 
         })
@@ -27,7 +27,7 @@ onMounted(()=>{
                     </div>
                     <h2 class="text-primary font-semibold text-2xl leading-6 mb-2">{{ member.name }}
                     </h2>
-                    <h2 class="text-2xl text-amber-600">Director</h2>
+                    <h2 class="text-2xl text-amber-600">{{member.job}}</h2>
                     <base-button class="rounded-full w-fit mx-auto mt-4" @click="$router.push({path:`/leadership/${member._id}` , params:{id:member._id}})">Read More</base-button>
                 </div>
             </div>

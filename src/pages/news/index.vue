@@ -1,20 +1,44 @@
 <script lang="ts" setup>
-import {news} from "../../stores/new"
+import { getAllData } from "../../stores/getAllData"
 import { storeToRefs } from "pinia";
-const {newsList} = storeToRefs(news())
+const { news} = storeToRefs(getAllData());
+
+// const { newsList } = storeToRefs(getAllData())
+const processing = ref(false)
+onMounted(async () => {
+  if (news.value.length === 0) {
+    processing.value = true;
+    getAllData()
+      .getNews()
+      .finally(() => {
+        processing.value = false;
+      });
+  }
+});
+const dateFormat = (date:string)=>{
+    return new Date(date).toISOString()
+          .slice(0, 10)
+          .split('/')
+          .join('-') || ''
+}
 </script>
 <template>
+  <overlayloader v-if="processing" />
+
     <div>
         <CompBg img="newsBg" />
-        <div class="my-24 grid md:grid-cols-2 grid-cols-1 gap-16 md:px-32 px-12" >
-            <div class="flex flex-col" v-for="item in newsList" :key="item.id" :data-aos="item.id % 2 !== 0 ? 'fade-right':'fade-left' ">
+        <div class="my-24 grid md:grid-cols-2 grid-cols-1 gap-16 md:px-32 px-12">
+            <div class="flex flex-col" v-for="(item,index) in news" :key="index"
+                :data-aos="(index + 1) % 2 !== 0 ? 'fade-right' : 'fade-left'">
                 <div class="new-img">
-                    <img :src="`../../public/${item.imgSrc}.jpeg`" :alt="item.imgSrc">
+                    <img :src="item.image" class="h-60 w-full" :alt="item.imgSrc">
                 </div>
-                <h2 class="text-2xl mt-4 mb-6 font-semibold text-primary">{{item.title}}</h2>
-                <span class="text-sm">{{item.date}}</span>
-                <p class="text-base mt-2">{{item.desc.slice(0,200)}}...</p>
-                <BaseButton  class="w-fit mt-6 " @click="$router.push({path:'/news/'+item.link})">Read More</BaseButton>
+                <div class="pe-4">
+                    <h2 class="text-2xl mt-y font-semibold text-primary">{{ item.header }}</h2>
+                    <span class="text-sm mt-1 text-zinc-600">{{ dateFormat(item.date) }}</span>
+                    <p class="text-base mt-2">{{ item.content.slice(0, 200) }}...</p>
+                    <base-button class="w-fit mt-6 " @click="$router.push({ path: `/news/${item._id}`})">Read More</base-button>
+                </div>
             </div>
         </div>
     </div>

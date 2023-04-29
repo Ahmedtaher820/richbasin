@@ -12,10 +12,5 @@ const mainRoutes =  [
         path: '/contact',
         component: () => import('../pages/contact.vue')
     },
-    {
-        path: '/services',
-        name:'services',
-        component: services,
-    },
 ]
 export default mainRoutes

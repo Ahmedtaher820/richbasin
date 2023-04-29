@@ -1,44 +1,27 @@
 <script lang="ts" setup>
-const services = ref([
-  {
-    title:'Offshore Drilling & Well Completion',
-    imgSrc:'about1',
-    lists:['Optimize well lifecycle and increase recovery, extend life of producing wells','Support exploration, appraisal, development, and producing projects','Managed Pressure Drilling (MPD)','Slickline, wireline and coiled tubing intervention operations','Wellbore and near wellbore reservoir sand face cleaning','Provide intervention vessels, technical personnel, and support services','Well abandonment and decommissioning'],
-    id:1
+import {PublicFormData} from "../../types/types"
+import {  PropType } from 'vue';
+
+const props = defineProps({
+  services:{
+      type:[] as PropType<PublicFormData[]>,
+      required: true
   },
-  {
-    title:'Offshore Drilling & Well Completion',
-    imgSrc:'about1',
-    lists:['Optimize well lifecycle and increase recovery, extend life of producing wells','Support exploration, appraisal, development, and producing projects','Managed Pressure Drilling (MPD)','Slickline, wireline and coiled tubing intervention operations','Wellbore and near wellbore reservoir sand face cleaning','Provide intervention vessels, technical personnel, and support services','Well abandonment and decommissioning'],
-    id:2
-  },
-  {
-    title:'Offshore Drilling & Well Completion',
-    imgSrc:'about1',
-    lists:['Optimize well lifecycle and increase recovery, extend life of producing wells','Support exploration, appraisal, development, and producing projects','Managed Pressure Drilling (MPD)','Slickline, wireline and coiled tubing intervention operations','Wellbore and near wellbore reservoir sand face cleaning','Provide intervention vessels, technical personnel, and support services','Well abandonment and decommissioning'],
-    id:3
-  },
-  {
-    title:'Offshore Drilling & Well Completion',
-    imgSrc:'about1',
-    lists:['Optimize well lifecycle and increase recovery, extend life of producing wells','Support exploration, appraisal, development, and producing projects','Managed Pressure Drilling (MPD)','Slickline, wireline and coiled tubing intervention operations','Wellbore and near wellbore reservoir sand face cleaning','Provide intervention vessels, technical personnel, and support services','Well abandonment and decommissioning'],
-    id:4
-  },
-])
+})
 </script>
 
 <template>
     <div>
         <h2 class="sec-header header-after" data-aos="fade-down" data-aos-delay="100">Our Services</h2>
-        <div class="grid md:grid-cols-2 grid-cols-1 text-center gap-8"             
+        <div class="grid md:grid-cols-3 grid-cols-1 text-center gap-8"             
     >
-          <router-link :to="{path:'/services',hash:'/#'+serv.id}" class="  md:mb-14 cursor-pointer"
-          :data-aos="serv.id % 2 !== 0 ? 'fade-right':'fade-left' "
-          :data-aos-delay="serv.id * 75"
-          v-for="serv in services" :key="serv.id"
+          <router-link :to="{path:'/services',hash:'/#'+serv._id}" class="  md:mb-14 cursor-pointer"
+          v-for="(serv,index) in services" :key="serv._id"
+          :data-aos="index % 2 !== 0 ? 'fade-right':'fade-left' "
+          data-aos-delay="300"
           >
-            <img :src="`../../../public/${serv.imgSrc}.jfif`" :alt="serv.imgSrc">
-            <h2 class="text-2xl mt-5 font-semi bold text-primary">{{serv.title}}</h2>
+            <img :src="serv.image" class="h-60" :alt="serv.header">
+            <h2 class="text-2xl mt-5 font-semibold text-primary">{{serv.header}}</h2>
           </router-link>
 </div>
       </div>

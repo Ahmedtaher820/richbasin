@@ -1,20 +1,19 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia"
-import {leadership} from "../../stores/leadership"
+import {getAllData} from "../../stores/getAllData"
 import type {LeaderShipType} from "../../types/types"
-const {leadershipInfo,getLeaderShipById} = storeToRefs(leadership())
+const {leadershipInfo,getLeaderShipById} = storeToRefs(getAllData())
 const processing = ref(false)
 const route = useRoute()
 const member = ref<LeaderShipType>({name:'',image:'',_id:'',content:'',job:''})
-const { getLeaderShip} = storeToRefs(leadership())
+const { getLeaderShip} = storeToRefs(getAllData())
 onMounted(()=>{
     if(getLeaderShip.value.length === 0){
         processing.value = true
-        leadership().getAllLeaderShip().finally(()=>{
+        getAllData().getAllLeaderShip().finally(()=>{
             processing.value= false
         })
     }
-    // @ts-ignore
 })
 </script>
 <template>
@@ -26,7 +25,7 @@ onMounted(()=>{
         </div>
         <div class="col-span-7">
             <h1 class="md:text-5xl text-2xl font-bold text-primary">{{getLeaderShipById(route.params.slug)?.name}}</h1>
-            <h3 class="text-2xl mt-2 text-amber-600">Corporate Communications Manager</h3>
+            <h3 class="text-2xl mt-2 text-amber-600">{{getLeaderShipById(route.params.slug)?.job}}</h3>
             <p class="text-2xl mt-4 text-zinc-500 leading-10">
                 {{ getLeaderShipById(route.params.slug)?.content }}
             </p>

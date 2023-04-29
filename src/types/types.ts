@@ -20,3 +20,21 @@ export interface LeaderShipType {
     _id:string
     job:string
 }
+export interface PublicFormData {
+    content: string 
+    header: string 
+    image: string
+    date:string 
+    _id:string 
+}
+export interface location{
+    coordinates:string[]
+    address:string
+}
+export interface Contact{
+    email:string
+    phoneNumber1: string
+    phoneNumber2: string
+    location: location
+    _id?:string | null
+}

@@ -64,10 +64,10 @@ const mobileMenuOpen = ref(false)
     <header class="bg-white sticky w-full top-0 left-0 shadow-sm z-50">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
-            <a href="/" class="-m-1.5 p-1.5">
+            <router-link to="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
               <img class="w-20" src="../../../public/logo.jfif" alt="" />
-            </a>
+            </router-link>
           </div>
           <div class="flex lg:hidden">
             <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
@@ -149,15 +149,13 @@ const mobileMenuOpen = ref(false)
       </header>
 </template>
 <style>
-nav li:hover,
-nav li.router-link-active,
-nav li.router-link-exact-active {
-  background-color: indianred;
-  cursor: pointer;
+.router-link-active{
+  @apply relative font-semibold
 }
+
 .link::after{
   content: '';
-  @apply absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300;
+  @apply absolute bottom-1 left-1/2 w-0  h-0.5 bg-primary transition-all duration-300;
   transform: translateX(-50%);
 }
 .link:hover::after{

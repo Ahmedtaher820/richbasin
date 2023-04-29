@@ -8,7 +8,7 @@ const newsRouter = [
         },
         {
             path: '/news/:slug',
-            name:'newsArticle',
+            name:'newsBox',
             component: ()=> import('../pages/news/[slug].vue')
         },
 ]
