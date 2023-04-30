@@ -1,4 +1,3 @@
-import { stat } from "fs"
 import {defineStore} from "pinia"
 export const useApp = defineStore({
     id:'app',

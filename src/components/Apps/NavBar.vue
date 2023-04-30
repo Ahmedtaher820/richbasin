@@ -24,7 +24,7 @@ import {
   SpeakerWaveIcon
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
-import i18n from '../../i18n';
+// import i18n from '../../i18n';
 
 const about = [
   { name: 'leadership', href: '/leadership', icon: UserGroupIcon },
@@ -67,7 +67,7 @@ const mobileMenuOpen = ref(false)
 
 <template>
     <header class="bg-white sticky w-full top-0 left-0 shadow-sm z-50">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav class="mx-auto flex w-full items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
             <router-link to="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
@@ -82,11 +82,10 @@ const mobileMenuOpen = ref(false)
           </div>
           <PopoverGroup class="hidden lg:flex lg:gap-x-12">
             <Popover class="relative flex">
-              <PopoverButton class="flex items-center gap-x-1 text-sm  border-none text-gray-900">
+              <PopoverButton class="flex items-center gap-x-1 text-sm focus:outline-none  border-none text-gray-900">
                   
-                  <ChevronDownIcon v-if="i18n.global.locale.value === 'ar'" class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                  {{ $t('nav.about') }}
-                  <ChevronDownIcon v-if="i18n.global.locale.value !== 'ar'" class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                   About
+                  <ChevronDownIcon  class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
 
               </PopoverButton>
     
@@ -98,8 +97,8 @@ const mobileMenuOpen = ref(false)
                         <component :is="item.icon" class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div class="flex-auto">
-                        <router-link :to="{path:item.href}" class="block font-semibold text-gray-900">
-                          {{$t(`${item.name}`) }}
+                        <router-link :to="{path:item.href}" class="block text-1xl font-semibold text-gray-900">
+                          {{item.name}}
                           <span class="absolute inset-0" />
                         </router-link>
                       </div>
@@ -115,15 +114,12 @@ const mobileMenuOpen = ref(false)
               </transition>
             </Popover>
     
-            <router-link v-for="item in nav"  :key="item.name" :to="item.path" class="-mx-3 block rounded-lg p-2 text-sm leading-7 text-gray-900 link relative">{{$t(`nav.${item.name}`)}}</router-link>
+            <router-link v-for="item in nav"  :key="item.name" :to="item.path" class="-mx-3 block rounded-lg p-2 text-base leading-7 text-gray-900 link relative">{{`${item.name}`}}</router-link>
           </PopoverGroup>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <language-switcher />
-          </div>
         </nav>
         <Dialog as="div" class="lg:hidden " @close="mobileMenuOpen = false" :open="mobileMenuOpen">
           <div class="fixed inset-0 " />
-          <DialogPanel class="fixed inset-y-0 mob-nav right-0 w-full overflow-y-auto bg-white px-8 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <DialogPanel class="fixed inset-y-0 mob-nav left-0 w-full overflow-y-auto bg-white px-8 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-end">
               <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
                 <span class="sr-only">Close menu</span>
@@ -135,17 +131,16 @@ const mobileMenuOpen = ref(false)
                 <div class="space-y-2 py-6">
                   <Disclosure as="div"  v-slot="{ open }">
                     <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 text-base  hover:bg-gray-50">
-                      {{ $t('nav.about') }}
+                      About
                       <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
                     </DisclosureButton>
                     <DisclosurePanel class="mt-2 space-y-2">
                       <DisclosureButton v-for="item in [...about, ...callsToAction]" :key="item.name" as="a" :href="item.href" class="block rounded-lg py-2 pl-8 pr-3 text-sm font-semibold leading-7 text-gray-600 hover:bg-gray-50">{{ item.name }}</DisclosureButton>
                     </DisclosurePanel>
                   </Disclosure>
-                  <router-link v-for="item in nav"  :key="item.name" :to="item.path" class=" block rounded-lg py-2 text-base font-semibold leading-7 text-gray-900">{{$t(`nav.${item.name}`)}}</router-link>
+                  <router-link v-for="item in nav"  :key="item.name" :to="item.path" class=" block rounded-lg py-2 text-1xl font-semibold leading-7 text-gray-900">{{`${item.name}`}}</router-link>
                 </div>
                 <div class="py-6">
-                  <language-switcher />
                 </div>
               </div>
             </div>

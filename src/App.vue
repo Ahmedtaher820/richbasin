@@ -1,27 +1,27 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useApp } from './stores/app';
-import i18n from "./i18n"
+// import i18n from "./i18n"
 import { onMounted } from 'vue';
-import { useI18n } from 'vue-i18n';
+// import { useI18n } from 'vue-i18n';
 import { useWindowScroll } from '@vueuse/core'
 
-const { locale } = useI18n()
+// const { locale } = useI18n()
 
 
 const { x, y } = useWindowScroll()
 
 onMounted(() => {
-  const lang = localStorage.getItem('selected-locale')
-  if (lang) { i18n.global.locale.value = JSON.parse(lang) }
-  else {
-    if (i18n.global.locale.value !== 'ar' && i18n.global.locale.value !== 'en') {
-      i18n.global.locale.value = 'en'
-      localStorage.setItem('selected-locale', JSON.stringify('en'))
-      return
-    }
-    localStorage.setItem('selected-locale', JSON.stringify(i18n.global.locale.value))
-  }
+  // const lang = localStorage.getItem('selected-locale')
+  // if (lang) { i18n.global.locale.value = JSON.parse(lang) }
+  // else {
+  //   if (i18n.global.locale.value !== 'ar' && i18n.global.locale.value !== 'en') {
+  //     i18n.global.locale.value = 'en'
+  //     localStorage.setItem('selected-locale', JSON.stringify('en'))
+  //     return
+  //   }
+  //   localStorage.setItem('selected-locale', JSON.stringify(i18n.global.locale.value))
+  // }
 })
 const movePageTop = ()=>{
   window.scrollTo(0,0)
@@ -34,7 +34,7 @@ const movePageTop = ()=>{
       <router-view />
     <Footer />
     <Teleport to="body">
-      <div class="btn-up fixed  bottom-10 bg-primary py-2 px-2 rounded-sm hover:bg-primary-100 duration-300 cursor-pointer transition-all" @click="movePageTop()" :class="[i18n.global.locale.value === 'ar' ? 'left-10' : 'right-10']" v-if="y >= 800">
+      <div class="btn-up fixed  bottom-10 bg-primary py-2 px-2 rounded-sm hover:bg-primary-100 duration-300 cursor-pointer transition-all right-10" @click="movePageTop()"  v-if="y >= 800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 move-to" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 11l5-5l5 5M7 17l5-5l5 5"/></svg>
       </div>
     </Teleport>

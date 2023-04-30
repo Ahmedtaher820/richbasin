@@ -1,1 +1,0 @@
-import{k as c,a as o,c as a,h as n,F as t,f as e,_}from"./index-4859262b.js";const r={},l=e("div",{class:"md:px-32 px-12 my-24"},[e("div",{class:"flex flex-col gap-16"})],-1);function p(m,d){const s=_;return o(),a(t,null,[n(s),l],64)}const i=c(r,[["render",p]]);export{i as default};
