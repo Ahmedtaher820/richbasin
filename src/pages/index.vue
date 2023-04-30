@@ -38,7 +38,7 @@ onMounted(async () => {
   if (news.value.length === 0) {
     processing.value = true;
 
-    getAllData()
+    await getAllData()
       .getNews()
       .then((res) => {
         newsData.value = res.data.documents;
@@ -49,7 +49,7 @@ onMounted(async () => {
       });
   }
   if (services.value.length === 0) {
-    getAllData()
+    await getAllData()
       .getServices()
       .then((res) => {
         servicesData.value = res.data.documents;
@@ -60,7 +60,7 @@ onMounted(async () => {
   }
 
   if (projects.value.length === 0) {
-    getAllData()
+    await getAllData()
       .getProjects()
       .then((res) => {
         console.log(res);

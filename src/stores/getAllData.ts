@@ -26,6 +26,7 @@ export const getAllData = defineStore('news',{
         getLeaderShip : state => state.leadershipInfo,
         getLeaderShipById : state => (id:any) => state.leadershipInfo.find((e:LeaderShipType) => e._id === id),
         getNewsById : state => (id:any) => state.news.find((e:PublicFormData) => e._id === id),
+        getProjectsById : state => (id:any) => state.projects.find((e:PublicFormData) => e._id === id),
     },
     actions:{
         async getNews(){
@@ -42,8 +43,8 @@ export const getAllData = defineStore('news',{
         },
         async getContact(){
             return getData.getAllContact().then((res)=>{
-                this.contact = res.data.documents
-                return res
+                this.contact = res.data.documents[0]
+                return res.data.documents
             })
         },
         async getProjects(){

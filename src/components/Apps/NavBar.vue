@@ -19,17 +19,22 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
+  UserGroupIcon,
+  GlobeAltIcon,
+  SpeakerWaveIcon
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
 import i18n from '../../i18n';
 
 const about = [
-  { name: 'leadership', href: '/leadership', icon: ChartPieIcon },
-  { name: 'hse', href: '/about/health-safety-and-environment-hse', icon: CursorArrowRaysIcon },
+  { name: 'leadership', href: '/leadership', icon: UserGroupIcon },
+  { name: 'hse', href: '/health-safety-and-environment-hse', icon: GlobeAltIcon },
+  { name: 'Vision', href: '/vision', icon: ChartPieIcon },
+  { name: 'Mission', href: '/mission', icon: SpeakerWaveIcon },
+  { name: 'Value', href: '/value', icon: CursorArrowRaysIcon },
 ]
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
 ]
 const nav = [
     {
@@ -37,8 +42,8 @@ const nav = [
         name:'services',
     },
     {
-        path:"/project",
-        name:'project',
+        path:"/projects",
+        name:'projects',
     },
     {
         path:"/csr",

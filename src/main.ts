@@ -7,6 +7,8 @@ import 'aos/dist/aos.css'
 import router from './router'
 import "./assets/style.css"
 import 'aos/dist/aos.css'
+import { GoogleMap, Marker } from "vue3-google-map";
+
 // @ts-ignore
 
 import AOS from "aos";

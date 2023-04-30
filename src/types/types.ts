@@ -36,5 +36,5 @@ export interface Contact{
     phoneNumber1: string
     phoneNumber2: string
     location: location
-    _id?:string | null
+    _id:string | null
 }
