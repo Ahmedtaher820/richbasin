@@ -6,8 +6,8 @@ import { fileURLToPath, URL } from "node:url";
   import vue from "@vitejs/plugin-vue";
   // new stuff
   import { resolve, dirname } from 'node:path';
-  import vueI18n from '@intlify/vite-plugin-vue-i18n';
-// https://vitejs.dev/config/
+  import vueI18n from '@intlify/vite-plugin-vue-i18n'
+  // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(),
     vueI18n({
