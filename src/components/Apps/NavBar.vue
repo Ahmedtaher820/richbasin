@@ -27,8 +27,8 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/so
 // import i18n from '../../i18n';
 
 const about = [
-  { name: 'leadership', href: '/leadership', icon: UserGroupIcon },
-  { name: 'hse', href: '/health-safety-and-environment-hse', icon: GlobeAltIcon },
+  { name: 'Leadership', href: '/leadership', icon: UserGroupIcon },
+  { name: 'Health Safety And Environment-hse', href: '/health-safety-and-environment-hse', icon: GlobeAltIcon },
   { name: 'Vision', href: '/vision', icon: ChartPieIcon },
   { name: 'Mission', href: '/mission', icon: SpeakerWaveIcon },
   { name: 'Value', href: '/value', icon: CursorArrowRaysIcon },
@@ -37,29 +37,33 @@ const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
 ]
 const nav = [
+  {
+        path:"/",
+        name:'Home',
+    },
     {
         path:"/services",
-        name:'services',
+        name:'Services',
     },
     {
         path:"/projects",
-        name:'projects',
+        name:'Projects',
     },
     {
         path:"/csr",
-        name:'csr',
+        name:'CSR',
     },
     {
         path:"/news",
-        name:'news',
+        name:'News',
     },
     {
         path:"/career",
-        name:'career',
+        name:'Career',
     },
     {
         path:"/contact",
-        name:'contact',
+        name:'Contact',
     },  
 ]
 const mobileMenuOpen = ref(false)
@@ -82,7 +86,7 @@ const mobileMenuOpen = ref(false)
           </div>
           <PopoverGroup class="hidden lg:flex lg:gap-x-12">
             <Popover class="relative flex">
-              <PopoverButton class="flex items-center gap-x-1 text-sm focus:outline-none  border-none text-gray-900">
+              <PopoverButton class="flex items-center gap-x-1 text-1xl focus:outline-none  border-none text-gray-900">
                   
                    About
                   <ChevronDownIcon  class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
@@ -114,7 +118,7 @@ const mobileMenuOpen = ref(false)
               </transition>
             </Popover>
     
-            <router-link v-for="item in nav"  :key="item.name" :to="item.path" class="-mx-3 block rounded-lg p-2 text-base leading-7 text-gray-900 link relative">{{`${item.name}`}}</router-link>
+          <router-link v-for="item in nav"  :key="item.name" :to="item.path" class="-mx-3 block rounded-lg p-2 text-base leading-7 text-gray-900 link relative">{{`${item.name}`}}</router-link>
           </PopoverGroup>
         </nav>
         <Dialog as="div" class="lg:hidden " @close="mobileMenuOpen = false" :open="mobileMenuOpen">
