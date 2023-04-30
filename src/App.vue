@@ -45,6 +45,9 @@ const movePageTop = ()=>{
 *{
   scroll-behavior: smooth;
 }
+body{
+  overflow-x: hidden;
+}
 ::selection{
   color: white;
   @apply bg-primary

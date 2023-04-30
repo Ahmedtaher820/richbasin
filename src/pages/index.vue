@@ -21,7 +21,6 @@ const text = ref("");
   }
   currentText = fun[count];
   currentChar = currentText.slice(0, ++ind);
-  // console.log(currentChar)
   text.value = currentChar;
   if (currentChar.length === currentText.length) {
     count++;
@@ -42,7 +41,6 @@ onMounted(async () => {
       .getNews()
       .then((res) => {
         newsData.value = res.data.documents;
-        console.log(newsData.value);
       })
       .finally(() => {
         processing.value = false;
@@ -62,9 +60,6 @@ onMounted(async () => {
   if (projects.value.length === 0) {
     await getAllData()
       .getProjects()
-      .then((res) => {
-        console.log(res);
-      })
       .finally(() => {
         processing.value = false;
       });

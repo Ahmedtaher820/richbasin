@@ -15,7 +15,6 @@ const props = defineProps({
       required:true
   }
 })
-console.log(props.carouselInfo)
 const breakPoints = {
   320:{
     itemsToShow: 1,

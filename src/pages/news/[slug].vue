@@ -4,7 +4,6 @@ import { getAllData } from "../../stores/getAllData"
 const { news , getNewsById } = storeToRefs(getAllData())
 const processing = ref(false)
 onMounted(()=>{
-    console.log(1)
     if(news.value.length === 0){
         processing.value = true
         getAllData().getNews().finally(()=>{

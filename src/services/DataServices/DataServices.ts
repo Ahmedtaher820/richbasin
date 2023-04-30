@@ -19,7 +19,6 @@ instance.interceptors.response.use((response:any)=>{
     (error) => {
         
         if (error.response.status === ERR_403) {
-          //console.log('yes')
           window.location.href = '/welcome'
         }
         const errorData = error.response.data

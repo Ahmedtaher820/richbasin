@@ -8,7 +8,6 @@ onMounted(()=>{
       processing.value = true
       getAllData().getContact().finally(()=>{
         processing.value = false
-        console.log(contact.value)
       })
     }
 })

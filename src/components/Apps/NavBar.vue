@@ -12,6 +12,14 @@ import {
   PopoverPanel,
 } from '@headlessui/vue'
 import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  TransitionChild,
+  TransitionRoot,
+} from '@headlessui/vue'
+import {
   ArrowPathIcon,
   Bars3Icon,
   ChartPieIcon,
@@ -87,7 +95,6 @@ const mobileMenuOpen = ref(false)
           <PopoverGroup class="hidden lg:flex lg:gap-x-12">
             <Popover class="relative flex">
               <PopoverButton class="flex items-center gap-x-1 text-1xl focus:outline-none  border-none text-gray-900">
-                  
                    About
                   <ChevronDownIcon  class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
 
@@ -121,7 +128,47 @@ const mobileMenuOpen = ref(false)
           <router-link v-for="item in nav"  :key="item.name" :to="item.path" class="-mx-3 block rounded-lg p-2 text-base leading-7 text-gray-900 link relative">{{`${item.name}`}}</router-link>
           </PopoverGroup>
         </nav>
-        <Dialog as="div" class="lg:hidden " @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+        <TransitionRoot as="template" :show="mobileMenuOpen">
+          <Dialog as="div" class="relative z-50 lg:hidden" @close="mobileMenuOpen = false">
+            <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
+              <div class="fixed inset-0 bg-gray-900/80" />
+            </TransitionChild>
+    
+            <div class="fixed inset-0 flex">
+              <TransitionChild as="template" enter="transition ease-in-out duration-300 transform" enter-from="-translate-x-full" enter-to="translate-x-0" leave="transition ease-in-out duration-300 transform" leave-from="translate-x-0" leave-to="-translate-x-full">
+                <DialogPanel class="relative mr-16 flex w-full max-w-xs flex-1">
+                  <TransitionChild as="template" enter="ease-in-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in-out duration-300" leave-from="opacity-100" leave-to="opacity-0">
+                    <div class="absolute right-0 top-0 flex w-16 justify-center pt-5">
+                      <button type="button" class="-m-2.5 p-2.5" @click="sidebarOpen = false">
+                        <span class="sr-only">Close sidebar</span>
+                        <XMarkIcon class="h-6 w-6 text-primary" aria-hidden="true" />
+                      </button>
+                    </div>
+                  </TransitionChild>
+                  <!-- Sidebar component, swap this element with another sidebar if you like -->
+                  <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
+               
+                    <Disclosure as="div"  v-slot="{ open }">
+                      <DisclosureButton class="flex w-full mt-16 items-center justify-between rounded-lg py-2 text-base  hover:bg-gray-50">
+                        About
+                        <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
+                      </DisclosureButton>
+                      <DisclosurePanel class="mt-2 space-y-2">
+                        <DisclosureButton v-for="item in [...about, ...callsToAction]" :key="item.name" as="a" :href="item.href" class="block rounded-lg py-2 pl-8 pr-3 text-sm font-semibold leading-7 text-gray-600 hover:bg-primary-50">{{ item.name }}</DisclosureButton>
+                      </DisclosurePanel>
+                    </Disclosure>
+                    <router-link v-for="item in nav"  :key="item.name" :to="item.path" class=" block rounded-lg py-2 text-1xl font-semibold  leading-7 text-gray-900">
+                      <span @click="mobileMenuOpen = false">
+                        {{`${item.name}`}}
+                      </span> 
+                    </router-link>
+                  </div>
+                </DialogPanel>
+              </TransitionChild>
+            </div>
+          </Dialog>
+        </TransitionRoot>
+        <!-- <Dialog as="div" class="lg:hidden " @close="mobileMenuOpen = false" :open="mobileMenuOpen">
           <div class="fixed inset-0 " />
           <DialogPanel class="fixed inset-y-0 mob-nav left-0 w-full overflow-y-auto bg-white px-8 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-end">
@@ -133,23 +180,14 @@ const mobileMenuOpen = ref(false)
             <div class="mt-6 flow-root">
               <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
-                  <Disclosure as="div"  v-slot="{ open }">
-                    <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 text-base  hover:bg-gray-50">
-                      About
-                      <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
-                    </DisclosureButton>
-                    <DisclosurePanel class="mt-2 space-y-2">
-                      <DisclosureButton v-for="item in [...about, ...callsToAction]" :key="item.name" as="a" :href="item.href" class="block rounded-lg py-2 pl-8 pr-3 text-sm font-semibold leading-7 text-gray-600 hover:bg-gray-50">{{ item.name }}</DisclosureButton>
-                    </DisclosurePanel>
-                  </Disclosure>
-                  <router-link v-for="item in nav"  :key="item.name" :to="item.path" class=" block rounded-lg py-2 text-1xl font-semibold leading-7 text-gray-900">{{`${item.name}`}}</router-link>
+             
                 </div>
                 <div class="py-6">
                 </div>
               </div>
             </div>
           </DialogPanel>
-        </Dialog>
+        </Dialog> -->
       </header>
 </template>
 <style>
