@@ -75,7 +75,7 @@ onMounted(async () => {
 <template>
   <overlayloader v-if="processing" />
   <div class="relative">
-    <div class="home overflow-hidden">
+    <div class="home overflow-hidden md:block hidden">
       <div class="header-content relative flex">
         <div>
           <video autoplay loop class="absolute top-0 z-0">
