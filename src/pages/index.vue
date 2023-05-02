@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { getAllData } from "../stores/getAllData";
 import { storeToRefs } from "pinia";
-const { news, projects, contact, services } = storeToRefs(getAllData());
+const { news, projects,  services,partners } = storeToRefs(getAllData());
 const fun = [
   "innonvation",
   "integrity",
@@ -34,36 +34,18 @@ const newsData = ref([]);
 const servicesData = ref([]);
 const processing = ref(false);
 onMounted(async () => {
-  if (news.value.length === 0) {
+  if(news.value.length === 0 || services.value.length === 0  || projects.value.length === 0 || partners.value.length === 0){
+
     processing.value = true;
-
-    await getAllData()
-      .getNews()
-      .then((res) => {
-        newsData.value = res.data.documents;
+    Promise.all([getAllData()
+    .getNews(),getAllData()
+      .getServices(),getAllData()
+      .getProjects(),getAllData()
+    .getPartners()]).finally(()=>{
+        processing.value = false;
+        
       })
-      .finally(() => {
-        processing.value = false;
-      });
-  }
-  if (services.value.length === 0) {
-    await getAllData()
-      .getServices()
-      .then((res) => {
-        servicesData.value = res.data.documents;
-      })
-      .finally(() => {
-        processing.value = false;
-      });
-  }
-
-  if (projects.value.length === 0) {
-    await getAllData()
-      .getProjects()
-      .finally(() => {
-        processing.value = false;
-      });
-  }
+    }
 });
 </script>
 
@@ -91,11 +73,10 @@ onMounted(async () => {
     </div>
     <div class="serv-bg relative pt-16 pb-6 md:px-32 px-12 mt-20">
       <div class="overlay"></div>
-      <h2 class="text-4xl leading-relaxed" data-aos="fade-up">
-        We provide the energy industry with world-class drilling rigs, well
-        construction, intervention and lifecycle management, engineering
-        procurement and construction services, highly trained and motivated
-        people, the latest technologies, sustainable and safe operations.
+      <h2 class="md:text-4xl leading-relaxed" data-aos="fade-up">
+        Started in 2018 in Petroleum R&D, build a new petroleum model based on a computerized technique using AI & ML learnings through analysis of world actual exploration and reservoir results using the conventional petroleum geology and exploration understanding. 
+Hundreds of world field maps were analyzed, iterated and applied concepts of geology. An exploration model was achieved
+model is engineering developed includes a mathematical algorithm with new phenomena support exploration, reservoir and production. It is a combination of many features. Four maps need to fit within a shape to prove successful reservoir.
       </h2>
     </div>
     <div class="md:px-32 px-12 mt-24">
@@ -105,7 +86,7 @@ onMounted(async () => {
       <OurProject :projects="projects" />
     </div>
     <div class="md:px-32 px-12 mt-24">
-      <Partnerships />
+      <Partnerships :partners="partners" />
     </div>
   </div>
 </template>

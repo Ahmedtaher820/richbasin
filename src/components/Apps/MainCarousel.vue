@@ -47,7 +47,7 @@ const dateFormat = (date:string)=>{
           <div class="new-body py-8 pl-8 pr-8 bg-primary-200 text-start">
               <div class="">
                   <h2 class="text-2xl font-semibold text-primary">{{obj.header}}</h2>
-                  <p class=" leading-5 mt-2"> {{ obj.content }}
+                  <p class=" leading-5 mt-2"> {{ obj.content.length > 100 ? obj.content.slice(0,150) + '...' : obj.content}}
                   </p>
                   <span class="text-sm block mt-2 text-neutral-600">{{new Date(obj.date).toISOString()
                    .slice(0, 10)

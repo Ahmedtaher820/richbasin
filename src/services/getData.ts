@@ -21,4 +21,8 @@ export default {
     getPartnerShip(){
         return DataServices.get('/partnership')
     },
+    getPartners(){
+        return DataServices.get('/partnerShips')
+
+    }
 }

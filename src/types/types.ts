@@ -38,3 +38,7 @@ export interface Contact{
     location: location
     _id:string | null
 }
+export interface PartnerShip {
+    text:string
+    image:string
+}

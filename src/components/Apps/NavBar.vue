@@ -59,7 +59,7 @@ const nav = [
     },
     {
         path:"/csr",
-        name:'CSR',
+        name:'Corporate Social Responsibility',
     },
     {
         path:"/news",

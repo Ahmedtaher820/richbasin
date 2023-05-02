@@ -17,15 +17,11 @@ const {contact} = storeToRefs(getAllData())
 const processing = ref(false);
 
 const showEmailSvg = ref(false);
-const initialPosition = ref({ lat: 24.73098, lng: 46.66990 })
 
 onMounted(async() => {
   if(!contact.value._id?.length){
     processing.value = true
-    getAllData().getContact().then((res)=>{
-      initialPosition.value.lat = res[0].location.coordinates[0]
-      initialPosition.value.lng = res[0].location.coordinates[1]
-    }).finally(()=>{
+    getAllData().getContact().finally(()=>{
       processing.value = false
     })
   }
@@ -195,9 +191,9 @@ const mobileMenuOpen = ref(false);
             </div>
           </div>
           <div>
-            <GoogleMap api-key="AIzaSyCpNs9VoHbAgqcjHqydjeIXW82UHp3b3NM" style="width: 100%; height: 500px" :center="initialPosition" :zoom="15" class="mt-36">
+            <GoogleMap api-key="AIzaSyCpNs9VoHbAgqcjHqydjeIXW82UHp3b3NM" style="width: 100%; height: 500px" :center="{lat:contact.location?.coordinates[0],lng:contact.location?.coordinates[1]}" :zoom="15" class="mt-36">
               <MarkerCluster>
-                <Marker :draggable="true" :options="{ position: initialPosition }" />
+                <Marker :draggable="true" :options="{ position: {lat:contact.location?.coordinates[0],lng:contact.location?.coordinates[1]} }" />
               </MarkerCluster>
             </GoogleMap>
           </div>

@@ -51,7 +51,7 @@ onMounted(()=>{
                 Designed By
             </span>
             <a href="tel:01008203698">
-                <b class="text-primary font-semibold text-1xl">Ahmed Taher</b>
+                <b class="text-primary font-semibold text-1xl">Taher Div</b>
             </a>
             
         </p>

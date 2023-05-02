@@ -9,6 +9,10 @@ showIcon : {
 processing:{
     type: Boolean,
     default: false
+},
+textSize:{
+  type:String,
+  default:'text-sm'
 }
 })
 const emits = defineEmits(['click'])
@@ -18,7 +22,7 @@ const click = ()=>{
 </script>
 
 <template>
-  <button class="bg-primary text-white px-4 py-2 text-sm border border-primary hover:border-primary-200 duration-300 transition-all hover:bg-primary-100  flex gap-2 items-center" @click="click()">
+  <button class="bg-primary text-white px-4 py-2  border border-primary hover:border-primary-200 duration-300 transition-all hover:bg-primary-100  flex gap-2 items-center" :class="[textSize!== 'text-sm'?textSize:'text-sm']" @click="click()">
     <slot />
     <loader v-if="processing" />
     <svg

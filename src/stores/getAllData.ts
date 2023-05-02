@@ -1,9 +1,7 @@
 
 import {defineStore} from "pinia"
 import getData from "../services/getData";
-import type {PublicFormData} from "../types/types"
-import type {LeaderShipType} from "../types/types"
-import type {Contact} from "../types/types"
+import type {PublicFormData,LeaderShipType,Contact,PartnerShip} from "../types/types"
 
 export const getAllData = defineStore('news',{
     state: ()=>({
@@ -19,7 +17,7 @@ export const getAllData = defineStore('news',{
         projects : [] as PublicFormData[],
         leadershipInfo:[] as LeaderShipType[],
         csr:[] as PublicFormData[],
-
+        partners:[] as PartnerShip[]
 
     }),
     getters:{
@@ -62,6 +60,12 @@ export const getAllData = defineStore('news',{
         async getCsr():Promise<any>{
             return getData.getCsr().then((res)=>{
                 this.leadershipInfo = res.data.documents
+                return res
+            })
+        },
+        async getPartners():Promise<any>{
+            return getData.getPartners().then((res)=>{
+                this.partners = res.data.documents
                 return res
             })
         },

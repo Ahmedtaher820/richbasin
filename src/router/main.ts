@@ -36,5 +36,10 @@ const mainRoutes =  [
         path: '/value',
         component: () => import('../pages/value.vue')
     },
+    {
+        name: 'partnerships',
+        path: '/partnerships',
+        component: () => import('../pages/partnerships.vue')
+    },
 ]
 export default mainRoutes
