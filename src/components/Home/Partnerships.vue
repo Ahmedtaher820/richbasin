@@ -11,7 +11,7 @@ import type {PartnerShip} from "../../types/types"
   <div class="mb-24">
     <h2 class="sec-header pb-3 header-after">Strategic Clients & Partnerships
     </h2>
-    <div class="flex gap-8 md:flex-row items-center justify-center flex-col partnerships mx-auto w-full">
+    <div class="flex gap-8 md:flex-row items-center justify-center flex-col partnerships mx-auto w-full overflow-x-hidden">
       <div class="flex items-center flex-col justify-center" data-aos="fade-right">
         <a  :href="partners[0]?.text"> <img :src="partners[0]?.image" target="_blank"  alt=""></a>
       </div>
