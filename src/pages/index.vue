@@ -73,7 +73,7 @@ onMounted(async () => {
     </div>
     <div class="serv-bg relative pt-16 pb-6 md:px-32 px-12 mt-20">
       <div class="overlay"></div>
-      <h2 class="md:text-4xl leading-relaxed" data-aos="fade-up">
+      <h2 class="md:text-4xl text-1xl text-value" data-aos="fade-up">
         Started in 2018 in Petroleum R&D, build a new petroleum model based on a computerized technique using AI & ML learnings through analysis of world actual exploration and reservoir results using the conventional petroleum geology and exploration understanding. 
 Hundreds of world field maps were analyzed, iterated and applied concepts of geology. An exploration model was achieved
 model is engineering developed includes a mathematical algorithm with new phenomena support exploration, reservoir and production. It is a combination of many features. Four maps need to fit within a shape to prove successful reservoir.
@@ -163,5 +163,8 @@ video {
 
 .serv-bg h2 {
   @apply relative text-center text-white;
+}
+.text-value{
+  line-height: 1.5;
 }
 </style>

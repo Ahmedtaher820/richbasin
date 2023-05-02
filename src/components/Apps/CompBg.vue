@@ -38,7 +38,7 @@ const paths = route.path.split("/")
 
 <style scoped>
 .comp-bg{
-    background-image: url('../../public/newsBg.jpg');
+    background: url('../../public/newsBg.jpg');
     background-size: cover;
     background-position-y: 10%;
     height: 450px;
