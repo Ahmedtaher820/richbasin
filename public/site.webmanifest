@@ -1,20 +1,21 @@
 {
     "name": "RichBasin",
     "short_name": "RichB",
-    "start_url":"/",
+    "start_url": "/",
     "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        }
+      {
+        "src": "/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/android-chrome-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }
     ],
     "theme_color": "#ffffff",
     "background_color": "#07395e",
-    "display": "standalone"
-}
+    "display": "standalone",
+    "description": "Started in 2018 in Petroleum R&amp;D, build a new petroleum model based on a computerized technique using AI &amp; ML learnings through analysis of world actual exploration and reservoir results using the conventional petroleum geology and exploration understanding. Hundreds of world field maps were analyzed, iterated and applied concepts of geology. An exploration model was achieved model is engineering developed includes a mathematical algorithm with new phenomena support exploration, reservoir and production. It is a combination of many features. Four maps need to fit within a shape to prove successful reservoir."
+  }
