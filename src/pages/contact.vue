@@ -8,7 +8,7 @@ import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon,
-  XMarkIcon,
+  XMarkIcon,LinkIcon 
 } from "@heroicons/vue/24/outline";
 import { useApp } from "../stores/app";
 import { storeToRefs } from "pinia";
@@ -31,7 +31,7 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <Teleport to="body" v-if="showEmailSvg">
+  <Teleport to="body">
     <a
       href="https://sso.godaddy.com/v1/login?realm=pass&app=ox&fbclid=IwAR1ymaIRTAxQ4q2EcKCE7bjTVnJv74_swFirYRYPVfGRUjApXsFXDIfsRE4"
       class="btn-up fixed bottom-10 bg-primary py-2 px-4 rounded-sm hover:bg-primary-100 duration-300 cursor-pointer transition-all"
@@ -182,6 +182,19 @@ const mobileMenuOpen = ref(false);
                     >
                   </dd>
                 </div>
+                <!-- <a href="https://sso.godaddy.com/v1/login?realm=pass&app=ox&fbclid=IwAR1ymaIRTAxQ4q2EcKCE7bjTVnJv74_swFirYRYPVfGRUjApXsFXDIfsRE4" class="flex gap-x-4">
+                  <dt class="flex-none">
+                    <span class="sr-only">
+                    </span>
+                    <LinkIcon
+                      class="h-7 w-6 text-white"
+                      aria-hidden="true"
+                    />
+                  </dt>
+                  <dd>
+                      Login As  Admin
+                  </dd>
+                </a> -->
               </dl>
             </div>
           </div>

@@ -16,7 +16,7 @@ const paths = route.path.split("/")
 </script>
 
 <template>
-  <div class="comp-bg flex items-center pl-16 text-white relative">
+  <div class="comp-bg flex items-center pl-16 text-white relative" style="background:url('../../public/newsBg.jpg')">
     <div class="overlay absolute"></div>
     <div class="relative flex flex-col">
         <h2 class="text-4xl leading-10 capitalize">{{title ? title : $route.name}}</h2>
@@ -38,8 +38,6 @@ const paths = route.path.split("/")
 
 <style scoped>
 .comp-bg{
-    background: url('../../public/newsBg.jpg');
-    background-size: cover;
     background-position-y: 10%;
     height: 450px;
 }

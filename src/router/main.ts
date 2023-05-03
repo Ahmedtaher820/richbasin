@@ -7,14 +7,9 @@ const mainRoutes =  [
         component: Home
     },
     {
-        name: 'Contact',
+        name: 'contact',
         path: '/contact',
         component: () => import('../pages/contact.vue')
-    },
-    {
-        name: 'csr',
-        path: '/csr',
-        component: () => import('../pages/csr.vue')
     },
     {
         name: 'hse',
@@ -40,6 +35,11 @@ const mainRoutes =  [
         name: 'partnerships',
         path: '/partnerships',
         component: () => import('../pages/partnerships.vue')
+    },
+    {
+        name: 'career',
+        path: '/career',
+        component: () => import('../pages/career.vue')
     },
 ]
 export default mainRoutes

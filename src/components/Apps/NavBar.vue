@@ -36,7 +36,7 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/so
 
 const about = [
   { name: 'Leadership', href: '/leadership', icon: UserGroupIcon },
-  { name: 'Health Safety And Environment-hse', href: '/health-safety-and-environment-hse', icon: GlobeAltIcon },
+  { name: 'Health Safety And Environment', href: '/health-safety-and-environment-hse', icon: GlobeAltIcon },
   { name: 'Vision', href: '/vision', icon: ChartPieIcon },
   { name: 'Mission', href: '/mission', icon: SpeakerWaveIcon },
   { name: 'Value', href: '/value', icon: CursorArrowRaysIcon },
@@ -59,7 +59,7 @@ const nav = [
     },
     {
         path:"/csr",
-        name:'Corporate Social Responsibility',
+        name:'CSR',
     },
     {
         path:"/news",

@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseButton: typeof import('./components/Apps/BaseButton.vue')['default']
     CompBg: typeof import('./components/Apps/CompBg.vue')['default']
+    Csr: typeof import('./components/Home/csr.vue')['default']
     Footer: typeof import('./components/Apps/Footer.vue')['default']
     LastestNews: typeof import('./components/Home/LastestNews.vue')['default']
     Loader: typeof import('./components/Apps/Loader.vue')['default']

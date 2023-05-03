@@ -25,6 +25,7 @@ export const getAllData = defineStore('news',{
         getLeaderShipById : state => (id:any) => state.leadershipInfo.find((e:LeaderShipType) => e._id === id),
         getNewsById : state => (id:any) => state.news.find((e:PublicFormData) => e._id === id),
         getProjectsById : state => (id:any) => state.projects.find((e:PublicFormData) => e._id === id),
+        getCsrById : state => (id:any) => state.csr.find((e:PublicFormData) => e._id === id),
     },
     actions:{
         async getNews(){
@@ -59,7 +60,7 @@ export const getAllData = defineStore('news',{
         },
         async getCsr():Promise<any>{
             return getData.getCsr().then((res)=>{
-                this.leadershipInfo = res.data.documents
+                this.csr = res.data.documents
                 return res
             })
         },

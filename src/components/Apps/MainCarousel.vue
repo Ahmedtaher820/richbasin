@@ -38,8 +38,8 @@ const dateFormat = (date:string)=>{
 }
 </script>
 <template>
-  <Carousel :items-to-show="2" :wrap-around="true" :breakpoints="breakPoints" :autoplay="4000">
-      <Slide v-for="obj in carouselInfo" :key="obj._id" class="w-full">
+  <Carousel :items-to-show="2" :maxSlide="4" :wrap-around="true" :breakpoints="breakPoints" :autoplay="4000">
+      <Slide v-for="obj in carouselInfo" :key="obj._id" :wrapAround="false" :itemsToScroll="1" class="w-full">
         <div class="w-1/2 mb-14 cursor-pointer" 
           
           >
@@ -55,11 +55,13 @@ const dateFormat = (date:string)=>{
                    .join('-') || ''}}</span> 
                   <router-link class="bg-primary text-white px-4 py-2 text-sm border border-primary hover:border-primary-200 duration-300 transition-all hover:bg-primary-100  flex gap-2 items-center w-fit mt-3" :to="{path:`/news/${obj._id}`}">Join Now</router-link>
                 </div>
-              
             </div>
           </div>
     </Slide>
-  
+    <template #addons>
+      <navigation />
+      <pagination />
+    </template>
     </carousel> 
   </template>
   <style>
@@ -109,6 +111,9 @@ const dateFormat = (date:string)=>{
 }
 .carousel__slide > div {
   width: 85% !important;
+}
+.carousel__prev,.carousel__next{
+border: 0px;
 }
 </style>
   
