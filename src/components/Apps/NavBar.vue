@@ -124,16 +124,14 @@ const showNavList = () => {
             ref="list"
           >
             <ul class="flex flex-col overflow-hidden">
-              <li v-for="item in about" :key="item.name" class="flex items-center gap-2 hover:bg-slate-500 hover:text-white transition-all duration-300 py-3 pl-6 cursor-pointer">
+              <router-link :to="{ path: item.href }" v-for="item in about" :key="item.name" class="flex items-center gap-2 hover:bg-slate-500 relative hover:text-white transition-all duration-300 py-3 pl-6 cursor-pointer">
                 <component :is="item.icon" class="w-6 h-6" />
-                <router-link class="tracking-wide w-full" :to="{ path: item.href }">
-                <span class="block" @click="showNavList">
+                <span class="block absolute inset-0 left-16 top-3" @click="showNavList">
                     {{
                     item.name
                   }}
                 </span>
               </router-link>
-              </li>
             </ul>
           </div>
         </div>
