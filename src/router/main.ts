@@ -41,5 +41,10 @@ const mainRoutes =  [
         path: '/career',
         component: () => import('../pages/career.vue')
     },
+    {
+        name: 'privacy',
+        path: '/privacy',
+        component: () => import('../pages/privacy.vue')
+    },
 ]
 export default mainRoutes

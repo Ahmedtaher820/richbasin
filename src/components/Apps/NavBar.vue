@@ -31,6 +31,7 @@ import {
   GlobeAltIcon,
   SpeakerWaveIcon,
   ChevronUpIcon,
+  LockClosedIcon
 } from "@heroicons/vue/24/outline";
 import {
   ChevronDownIcon,
@@ -49,13 +50,10 @@ const about = [
   { name: "Vision", href: "/vision", icon: ChartPieIcon },
   { name: "Mission", href: "/mission", icon: SpeakerWaveIcon },
   { name: "Value", href: "/value", icon: CursorArrowRaysIcon },
+  { name: "Privacy", href: "/privacy", icon: LockClosedIcon },
 ];
 const callsToAction = [{ name: "Watch demo", href: "#", icon: PlayCircleIcon }];
 const nav = [
-  {
-    path: "/",
-    name: "Home",
-  },
   {
     path: "/services",
     name: "Services",

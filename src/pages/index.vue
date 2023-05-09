@@ -60,10 +60,10 @@ onMounted(async () => {
             <!-- <source src="Browsing.webm" type="video/webm" /> -->
           </video>
         </div>
-        <div class="z-20 relative header-text">
-          <h1 class="text-1xl">RichBasin</h1>
+        <div class="z-20 relative header-text flex flex-col justify-start items-start">
+          <h1 class="text-1xl font-bold">RichBasin</h1>
           <p class="text-6xl">
-            We Have <span> {{ text }}</span>
+            <span> {{ text }}</span>
           </p>
         </div>
       </div>
@@ -92,9 +92,7 @@ model is engineering developed includes a mathematical algorithm with new phenom
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Tilt+Prism&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Red+Hat+Display:wght@300;400;600;700;800;900&family=Signika+Negative:wght@700&family=Tilt+Prism&display=swap');
 .home {
   min-height: 80vh;
 }
@@ -104,11 +102,11 @@ video {
 }
 
 .header-text {
-  left: 50%;
-  bottom: 20%;
+  left: 60%;
+  bottom: -50px;
   transform: translate(-50%, 50%);
   color: #fff;
-  min-width: 400px;
+  min-width: 600px;
 }
 
 .header-text::after {
@@ -123,8 +121,7 @@ video {
 
 .header-text h1 {
   font-size: 80px;
-  font-family: "Climate Crisis", cursive;
-}
+  font-family: 'Signika Negative', sans-serif;}
 
 .header-text span {
   color: #c3a70a;

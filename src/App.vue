@@ -5,6 +5,9 @@ import { useApp } from './stores/app';
 import { onMounted } from 'vue';
 // import { useI18n } from 'vue-i18n';
 import { useWindowScroll } from '@vueuse/core'
+import { ChevronUpIcon      } from "@heroicons/vue/24/outline"
+
+
 
 // const { locale } = useI18n()
 
@@ -34,9 +37,9 @@ const movePageTop = ()=>{
       <router-view />
     <Footer />
     <Teleport to="body">
-      <div class="btn-up fixed  bottom-10 bg-primary py-2 px-2 rounded-sm hover:bg-primary-100 duration-300 cursor-pointer transition-all right-10" @click="movePageTop()"  v-if="y >= 800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 move-to" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 11l5-5l5 5M7 17l5-5l5 5"/></svg>
-      </div>
+      <div class="btn-up fixed  bottom-10 bg-white py-2 px-2 hover:bg-primary hover:text-white duration-300 cursor-pointer transition-all right-10 border-primary border rounded-md" @click="movePageTop()"  v-if="y >= 800">
+        <ChevronUpIcon class="move-to w-6 h-6" />
+            </div>
     </Teleport>
   </div>
 </template>
