@@ -161,6 +161,9 @@ video {
 .serv-bg h2 {
   @apply relative text-center text-white;
 }
+.comp-bg h2{
+  text-align: start !important;
+}
 .text-value{
   line-height: 1.5;
 }
