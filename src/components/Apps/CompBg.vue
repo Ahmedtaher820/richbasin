@@ -17,7 +17,7 @@ const paths = route.path.split("/")
 
 <template>
   <div class="comp-bg flex items-center pl-16 text-white relative">
-    <div class="overlay absolute"></div>
+    <!-- <div class="overlay absolute"></div> -->
     <div class="relative flex flex-col">
         <h2 class="text-4xl leading-10 capitalize">{{title ? title : $route.name}}</h2>
         <div class="flex items-center gap-3 mt-8">
