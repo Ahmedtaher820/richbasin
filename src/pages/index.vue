@@ -91,7 +91,7 @@ model is engineering developed includes a mathematical algorithm with new phenom
   </div>
 </template>
 
-<style scoped>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Red+Hat+Display:wght@300;400;600;700;800;900&family=Signika+Negative:wght@700&family=Tilt+Prism&display=swap');
 .home {
   min-height: 80vh;
