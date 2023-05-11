@@ -10,7 +10,7 @@ import mainRoutes from "./main"
 const baseRoutes: any = []
 const routes = baseRoutes.concat(mainRoutes,newsRouter,leadershipTeams,services,projectsRoutes,csr)
 const router = createRouter({
-    history:createWebHistory(import.meta.env.VITE_BASE_URL),
+    history:createWebHistory(),
     routes
 
 })
