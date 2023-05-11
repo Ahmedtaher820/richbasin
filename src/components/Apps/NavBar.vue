@@ -80,6 +80,7 @@ const nav = [
   },
 ];
 const mobileMenuOpen = ref(false);
+
 const list = ref();
 const showIcon = ref(true)
 const showNavList = () => {
