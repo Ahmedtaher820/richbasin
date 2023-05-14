@@ -87,6 +87,12 @@ const showNavList = () => {
   (list.value as HTMLElement).classList.toggle("active");
   showIcon.value = !showIcon.value
 };
+const checkAboutNav = ()=>{
+  if((list.value as HTMLElement).classList.contains("active")){
+  (list.value as HTMLElement).classList.remove("active");
+    
+  }
+}
 </script>
 
 <template>
@@ -141,8 +147,11 @@ const showNavList = () => {
           v-for="item in nav"
           :key="item.name"
           :to="item.path"
-          class="-mx-3 block rounded-lg p-2 text-base leading-7 text-gray-900 link relative"
-          >{{ `${item.name}` }}</router-link
+          >
+          <span class="-mx-3 block rounded-lg p-2 text-base leading-7 text-gray-900 link relative" @click="checkAboutNav">
+            {{ `${item.name}` }}
+          </span>
+          </router-link
         >
       </div>
     </nav>

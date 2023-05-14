@@ -38,7 +38,7 @@ const dateFormat = (date:string)=>{
 }
 </script>
 <template>
-  <Carousel :items-to-show="2" :maxSlide="4" :wrap-around="true" :breakpoints="breakPoints" :autoplay="4000">
+  <Carousel :items-to-show="2" :maxSlide="4" :wrap-around="false" :breakpoints="breakPoints" :autoplay="4000">
       <Slide v-for="obj in carouselInfo" :key="obj._id" :wrapAround="false" :itemsToScroll="1" class="w-full">
         <div class="w-1/2 mb-14 cursor-pointer" 
           

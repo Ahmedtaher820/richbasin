@@ -2,28 +2,31 @@
 <script setup lang="ts">
 import { defineComponent, h, ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
-import {getAllData} from "../stores/getAllData"
+import { getAllData } from "../stores/getAllData";
 import {
   Bars3Icon,
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon,
-  XMarkIcon,LinkIcon 
+  XMarkIcon,
+  LinkIcon,
 } from "@heroicons/vue/24/outline";
 import { useApp } from "../stores/app";
 import { storeToRefs } from "pinia";
-import { GoogleMap, Marker } from 'vue3-google-map'
-const {contact} = storeToRefs(getAllData())
+import { GoogleMap, Marker } from "vue3-google-map";
+const { contact } = storeToRefs(getAllData());
 const processing = ref(false);
 
 const showEmailSvg = ref(false);
 
-onMounted(async() => {
-  if(!contact.value._id?.length){
-    processing.value = true
-    getAllData().getContact().finally(()=>{
-      processing.value = false
-    })
+onMounted(async () => {
+  if (!contact.value._id?.length) {
+    processing.value = true;
+    getAllData()
+      .getContact()
+      .finally(() => {
+        processing.value = false;
+      });
   }
 });
 
@@ -138,7 +141,7 @@ const mobileMenuOpen = ref(false);
                       aria-hidden="true"
                     />
                   </dt>
-                  <dd>{{contact?.location?.address}}</dd>
+                  <dd>{{ contact?.location?.address }}</dd>
                 </div>
                 <div class="flex gap-x-4">
                   <dt class="flex-none">
@@ -149,23 +152,17 @@ const mobileMenuOpen = ref(false);
                     />
                   </dt>
                   <dd>
-                    <a class="hover:text-white" :href="`tel:${contact.phoneNumber1}`"
-                      >{{contact.phoneNumber1}}</a
+                    <a
+                      class="hover:text-white"
+                      :href="`tel:${contact.phoneNumber1}`"
+                      > {{ contact.phoneNumber1 }} </a
                     >
-                  </dd>
-                </div>
-                <div class="flex gap-x-4">
-                  <dt class="flex-none">
-                    <span class="sr-only">Telephone</span>
-                    <PhoneIcon
-                      class="h-7 w-6 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </dt>
-                  <dd>
-                    <a class="hover:text-white" :href="`tel:${contact.phoneNumber2}`"
-                      >{{contact.phoneNumber2}}</a
-                    >
+                     ,
+                    <a
+                    class="hover:text-white"
+                    :href="`tel:${contact.phoneNumber2}`"
+                    > {{ contact.phoneNumber2 }} </a
+                  >
                   </dd>
                 </div>
                 <div class="flex gap-x-4">
@@ -177,38 +174,62 @@ const mobileMenuOpen = ref(false);
                     />
                   </dt>
                   <dd>
-                    <a class="hover:text-white" :href="`mailto:${contact.email}`"
-                      >{{contact.email}}</a
+                    <a
+                      class="hover:text-white"
+                      :href="`mailto:${contact.email}`"
+                      >{{ contact.email }}</a
                     >
                   </dd>
                 </div>
-                <!-- <a href="https://sso.godaddy.com/v1/login?realm=pass&app=ox&fbclid=IwAR1ymaIRTAxQ4q2EcKCE7bjTVnJv74_swFirYRYPVfGRUjApXsFXDIfsRE4" class="flex gap-x-4">
+                <a
+                  href="https://www.linkedin.com/in/richbasin-exploration-and-production-modules-a7170b26b/"
+                  target="_blank"
+                  class="flex gap-x-4 w-fit"
+                >
                   <dt class="flex-none">
-                    <span class="sr-only">
-                    </span>
-                    <LinkIcon
+                    <span class="sr-only"> </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
                       class="h-7 w-6 text-white"
-                      aria-hidden="true"
-                    />
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="#9ca3af"
+                        d="M18.336 18.339h-2.665v-4.177c0-.996-.02-2.278-1.39-2.278c-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387c2.7 0 3.2 1.778 3.2 4.091v4.715ZM7.004 8.575a1.546 1.546 0 0 1-1.548-1.549a1.548 1.548 0 1 1 1.547 1.549Zm1.336 9.764H5.667V9.75H8.34v8.589ZM19.67 3H4.33C3.594 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.339C20.4 21 21 20.42 21 19.703V4.297C21 3.581 20.4 3 19.666 3h.003Z"
+                      />
+                    </svg>
                   </dt>
-                  <dd>
-                      Login As  Admin
-                  </dd>
-                </a> -->
+                  <dd class="hover:text-white">LinkedIn</dd>
+                </a>
               </dl>
             </div>
           </div>
           <div>
-            <GoogleMap api-key="AIzaSyCpNs9VoHbAgqcjHqydjeIXW82UHp3b3NM" style="width: 100%; height: 500px" :center="{lat:contact.location?.coordinates[0],lng:contact.location?.coordinates[1]}" :zoom="15" class="mt-36">
+            <GoogleMap
+              api-key="AIzaSyCpNs9VoHbAgqcjHqydjeIXW82UHp3b3NM"
+              style="width: 100%; height: 500px"
+              :center="{
+                lat: contact.location?.coordinates[0],
+                lng: contact.location?.coordinates[1],
+              }"
+              :zoom="15"
+              class="mt-36"
+            >
               <MarkerCluster>
-                <Marker :draggable="true" :options="{ position: {lat:contact.location?.coordinates[0],lng:contact.location?.coordinates[1]} }" />
+                <Marker
+                  :draggable="true"
+                  :options="{
+                    position: {
+                      lat: contact.location?.coordinates[0],
+                      lng: contact.location?.coordinates[1],
+                    },
+                  }"
+                />
               </MarkerCluster>
             </GoogleMap>
           </div>
         </div>
       </div>
-
-     
     </main>
 
     <!-- Footer -->
