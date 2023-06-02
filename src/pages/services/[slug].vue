@@ -3,7 +3,7 @@
 
 <template>
   <CompBg />
-  <div class="md:px-32 px-12  my-24">
+  <div class="md:px-32 px-8  my-24">
     <div class="flex flex-col gap-16">
       
     </div>        

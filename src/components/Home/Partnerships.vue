@@ -15,21 +15,21 @@ import type {PartnerShip} from "../../types/types"
       <div class="flex items-center flex-col justify-center" data-aos="fade-right">
         <a  :href="partners[0]?.text"> <img :src="partners[0]?.image" target="_blank"  alt=""></a>
       </div>
-      <div class="flex items-center md:flex-col flex-row justify-center  gap-4" data-aos="fade-right" data-aos-delay="100">
+      <div class="flex items-center md:flex-col flex-row justify-center  gap-4" data-aos="fade-right"  >
         <a :href="partners[1]?.text" > <img :src="partners[1]?.image" alt=""></a>
         <a :href="partners[2]?.text" > <img :src="partners[2]?.image" alt=""></a>
       </div>
-      <div class="flex items-center  md:flex-col flex-row justify-center gap-4" data-aos="fade-right" data-aos-delay="300">
+      <div class="flex items-center  md:flex-col flex-row justify-center gap-4" data-aos="fade-right"  >
         <a :href="partners[3]?.text" > <img :src="partners[3]?.image" alt=""></a>
         <a :href="partners[4]?.text"> <img :src="partners[4]?.image" alt=""></a>
         <a :href="partners[5]?.text"> <img :src="partners[5]?.image" alt=""></a>
       </div>
-      <div class="flex items-center  md:flex-col flex-row justify-center gap-4" data-aos="fade-left" data-aos-delay="300">
+      <div class="flex items-center  md:flex-col flex-row justify-center gap-4" data-aos="fade-left"  >
         <a :href="partners[6]?.text"> <img :src="partners[6]?.image" alt=""></a>
         <a :href="partners[7]?.text"> <img :src="partners[7]?.image" alt=""></a>
         <a :href="partners[8]?.text"> <img :src="partners[8]?.image" alt=""></a>
       </div>
-      <div class="flex items-center  md:flex-col flex-row justify-center gap-4" data-aos="fade-left" data-aos-delay="100">
+      <div class="flex items-center  md:flex-col flex-row justify-center gap-4" data-aos="fade-left"  >
         <a :href="partners[9]?.text" > <img :src="partners[9]?.image" alt=""></a>
         <a :href="partners[10]?.text"> <img :src="partners[10]?.image" alt=""></a>
       </div>
@@ -40,12 +40,15 @@ import type {PartnerShip} from "../../types/types"
        
        -->
     </div>
-    <base-button @click="$router.push({path:'/partnerships'})" class="mx-auto mt-6" text-size="md:text-2xl  rounded-sm">Show More Partnerships</base-button>
+    <base-button @click="$router.push({path:'/partnerships'})" class="mx-auto mt-12" text-size="md:text-xl  rounded-sm">More Partnerships</base-button>
   </div>
 </template>
 
 <style>
 .partnerships img {
   @apply w-32 h-32
+}
+.partnerships a img {
+  object-fit: cover;
 }
 </style>

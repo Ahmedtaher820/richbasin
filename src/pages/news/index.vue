@@ -27,11 +27,11 @@ const dateFormat = (date:string)=>{
 
     <div>
         <CompBg img="newsBg" />
-        <div class="my-24 grid md:grid-cols-2 grid-cols-1 gap-16 md:px-32 px-12">
+        <div class="md:my-24 my-12 grid md:grid-cols-2 grid-cols-1 gap-16 md:px-32 px-8">
             <div class="flex flex-col" v-for="(item,index) in news" :key="index"
                 :data-aos="(index + 1) % 2 !== 0 ? 'fade-right' : 'fade-left'">
                 <div class="new-img">
-                    <img :src="item.image" class="h-60 w-full" :alt="item.image">
+                    <img :src="item.image" class="h-60 w-full object-cover" :alt="item.image">
                 </div>
                 <div class="pe-4">
                     <h2 class="text-2xl mt-y font-semibold text-primary">{{ item.header }}</h2>

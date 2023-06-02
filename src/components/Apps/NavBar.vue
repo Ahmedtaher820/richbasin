@@ -127,13 +127,13 @@ const checkAboutNav = ()=>{
             <ChevronUpIcon class="w-4" v-else />
           </div>
           <div
-            class="nav-list absolute z-50 w-96 list text-primary -bottom-80 rounded-lg shadow-inner bg-white pt-6 "
+            class="nav-list absolute z-50 w-96 list text-primary -bottom-80 rounded-lg shadow-inner bg-white "
             ref="list"
           >
             <ul class="flex flex-col overflow-hidden">
-              <router-link :to="{ path: item.href }" v-for="item in about" :key="item.name" class="flex items-center gap-2 hover:bg-slate-500 relative hover:text-white transition-all duration-300 py-3 pl-6 cursor-pointer">
+              <router-link :to="{ path: item.href }" v-for="item in about" :key="item.name" class="flex items-center gap-2 hover:bg-slate-500 relative hover:text-white transition-all duration-300 pl-6 cursor-pointer">
                 <component :is="item.icon" class="w-6 h-6" />
-                <span class="block absolute inset-0 left-16 top-3" @click="showNavList">
+                <span class="block w-full top-3 py-3" @click="showNavList">
                     {{
                     item.name
                   }}
@@ -224,16 +224,16 @@ const checkAboutNav = ()=>{
                     />
                   </DisclosureButton>
                   <DisclosurePanel class="mt-2 space-y-2">
-                    <DisclosureButton
+                    <router-link
                       v-for="item in [...about, ...callsToAction]"
                       :key="item.name"
                       as="a"
-                      :href="item.href"
+                      :to="{path:item.href}"
                       class="block rounded-lg py-2 pl-8 pr-3 text-sm font-semibold leading-7 text-gray-600 hover:bg-primary-50"
-                      ><span @click="!open">
+                      ><span  @click="mobileMenuOpen = false">
                         {{ item.name }}
                       </span>
-                    </DisclosureButton>
+                    </router-link>
                   </DisclosurePanel>
                 </Disclosure>
 

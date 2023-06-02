@@ -38,14 +38,16 @@ const dateFormat = (date:string)=>{
 }
 </script>
 <template>
-  <Carousel :items-to-show="2" :maxSlide="4" :wrap-around="false" :breakpoints="breakPoints" :autoplay="4000">
+  <div v-if="carouselInfo.length > 3">
+
+    <Carousel :items-to-show="2" :maxSlide="4" :wrap-around="false" :breakpoints="breakPoints" :autoplay="4000">
       <Slide v-for="obj in carouselInfo" :key="obj._id" :wrapAround="false" :itemsToScroll="1" class="w-full">
         <div class="w-1/2 mb-14 cursor-pointer" 
-          
-          >
-          <img :src="obj.image" class="w-full h-60" :alt="obj.header">
+        
+        >
+        <img :src="obj.image" class="w-full h-60" :alt="obj.header">
           <div class="new-body py-8 pl-8 pr-8 bg-primary-200 text-start">
-              <div class="">
+            <div class="">
                   <h2 class="text-2xl font-semibold text-primary">{{obj.header}}</h2>
                   <p class=" leading-5 mt-2"> {{ obj.content.length > 100 ? obj.content.slice(0,150) + '...' : obj.content}}
                   </p>
@@ -62,8 +64,29 @@ const dateFormat = (date:string)=>{
       <navigation />
       <pagination />
     </template>
-    </carousel> 
-  </template>
+  </carousel> 
+</div>
+<div v-else>
+  <div v-for="obj in carouselInfo" :key="obj._id"  class="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 ">
+    <div class="cursor-pointer" 
+    >
+    <img :src="obj.image" class="w-full h-60" :alt="obj.header">
+      <div class="new-body py-8 pl-8 pr-8 bg-primary-200 text-start">
+        <div class="">
+              <h2 class="text-2xl font-semibold text-primary">{{obj.header}}</h2>
+              <p class=" leading-5 mt-2"> {{ obj.content.length > 100 ? obj.content.slice(0,150) + '...' : obj.content}}
+              </p>
+              <span class="text-sm block mt-2 text-neutral-600">{{new Date(obj.date).toISOString()
+               .slice(0, 10)
+               .split('/')
+               .join('-') || ''}}</span> 
+              <router-link class="bg-primary text-white px-4 py-2 text-sm border border-primary hover:border-primary-200 duration-300 transition-all hover:bg-primary-100  flex gap-2 items-center w-fit mt-3" :to="{path:`/news/${obj._id}`}">Join Now</router-link>
+            </div>
+        </div>
+      </div>
+</div>
+</div>
+</template>
   <style>
   .carousel__item {
     min-height: 200px;

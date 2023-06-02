@@ -17,7 +17,7 @@ onMounted(()=>{
 
     <div>
         <CompBg img="newsBg" :title="getCsrById($route.params?.slug)?.header" />
-        <div class="mt-12 flex flex-col md:px-32 px-12 my-24 gap-4 items-center w-3/4 mx-auto">
+        <div class="mt-12 flex flex-col md:px-32 px-8 my-24 gap-4 items-center w-3/4 mx-auto">
             <div class="page-img">
                 <img :src="`${getCsrById($route.params.slug)?.image}`"
                     :alt="getCsrById($route.params.slug)?.content" class="w-full mx-auto">

@@ -18,12 +18,12 @@ onMounted(()=>{
 <div>
     <overlayloader v-if="processing" />
     <CompBg img="newsBg" title="Leadership Team" />
-    <div class="my-24  md:px-32 px-12">
+    <div class="md:my-24 my-12  md:px-32 px-8">
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-12 gap-6">
             <div class="col-span-1" v-for="member in leadershipInfo" :key="member._id">
                 <div class="box flex flex-col text-center">
                     <div class="box-img border py-6 center-items mb-2">
-                        <img :src="member.image"  :alt="member.name">
+                        <img :src="member.image" class="object-cover"  :alt="member.name">
                     </div>
                     <h2 class="text-primary font-semibold text-2xl leading-6 mb-2">{{ member.name }}
                     </h2>

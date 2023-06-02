@@ -18,15 +18,15 @@ onMounted(()=>{
 </script>
 <template>
     <overlayloader v-if="processing" />
-  <div class="my-24  md:px-32 px-12">
-    <div class="grid grid-cols-10 gap-10">
-        <div class="col-span-3">
-            <img :src="getLeaderShipById(route.params.slug)?.image" :alt="member.name">
+  <div class="md:my-24 my-12  md:px-32 px-8">
+    <div class="grid grid-cols-4 gap-10">
+        <div class="md:col-span-1 col-span-4">
+            <img class="h-60 object-contain" :src="getLeaderShipById(route.params.slug)?.image" :alt="member.name">
         </div>
-        <div class="col-span-7">
+        <div class="md:col-span-3 col-span-4">
             <h1 class="md:text-5xl text-2xl font-bold text-primary">{{getLeaderShipById(route.params.slug)?.name}}</h1>
-            <h3 class="text-2xl mt-2 text-amber-600">{{getLeaderShipById(route.params.slug)?.job}}</h3>
-            <p class="text-2xl mt-4 text-zinc-500 leading-10">
+            <h3 class="md:text-2xl text-xl mt-2 text-amber-600">{{getLeaderShipById(route.params.slug)?.job}}</h3>
+            <p class="md:text-2xl w-full mt-4 text-zinc-500 md:leading-10 leading-6">
                 {{ getLeaderShipById(route.params.slug)?.content }}
             </p>
         </div>

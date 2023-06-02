@@ -68,10 +68,10 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-    <div class="md:px-32 px-12 mt-24">
+    <div class="md:px-32 px-8 md:mt-24 mt-8">
       <Services :services="services" />
     </div>
-    <div class="serv-bg relative pt-16 pb-6 md:px-32 px-12 mt-20">
+    <div class="serv-bg relative md:pt-16 md:pb-6 py-4 md:px-32 px-8 md:mt-24 mt-8">
       <div class="overlay"></div>
       <h2 class="md:text-4xl text-1xl text-value" data-aos="fade-up">
         Started in 2018 in Petroleum R&D, build a new petroleum model based on a computerized technique using AI & ML learnings through analysis of world actual exploration and reservoir results using the conventional petroleum geology and exploration understanding. 
@@ -79,13 +79,13 @@ Hundreds of world field maps were analyzed, iterated and applied concepts of geo
 model is engineering developed includes a mathematical algorithm with new phenomena support exploration, reservoir and production. It is a combination of many features. Four maps need to fit within a shape to prove successful reservoir.
       </h2>
     </div>
-    <div class="md:px-32 px-12 mt-24">
-      <LastestNews :news="news" class="mt-20" />
+    <div class="md:px-32 px-8 md:mt-24 mt-8">
+      <LastestNews :news="news" />
     </div>
-    <div class="serv-bg relative pt-24 pb-12 md:px-32 px-12 mt-20">
+    <div class="serv-bg relative md:pt-16 md:pb-6 py-4 md:px-32 px-8 md:mt-24 mt-8">
       <OurProject :projects="projects" />
     </div>
-    <div class="md:px-32 px-12 mt-24">
+    <div class="md:px-32 px-8 mt-24">
       <Partnerships :partners="partners" />
     </div>
   </div>

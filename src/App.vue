@@ -57,7 +57,7 @@ body{
 }
 .sec-header{
   position: relative;
-  @apply text-4xl mb-14 text-center text-primary font-bold mx-auto;
+  @apply md:text-4xl text-2xl md:mb-10 mb-8 text-center text-primary font-bold mx-auto;
   width: fit-content;
 }
 .header-after::after,.header-after-white::after{
